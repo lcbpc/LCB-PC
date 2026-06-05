@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LCB PC | Professional Tech Support</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050816;
+    color:white;
+    line-height:1.6;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:2rem;
+    background:
+        radial-gradient(circle at top,#2563eb 0%,transparent 40%),
+        radial-gradient(circle at bottom right,#1e40af 0%,transparent 35%),
+        #050816;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:0.7rem 1.2rem;
+    border-radius:999px;
+    background:rgba(37,99,235,.15);
+    border:1px solid rgba(37,99,235,.4);
+    color:#93c5fd;
+    font-size:.9rem;
+    margin-bottom:1.5rem;
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,6vw,5rem);
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:1.5rem;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:1.15rem;
+    max-width:700px;
+    margin:auto;
+}
+
+.section{
+    padding:5rem 2rem;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:3rem;
+}
+
+.services{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+}
+
+.service-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:2rem;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    border-color:#2563eb;
+}
+
+.service-card h3{
+    margin-bottom:1rem;
+    color:#60a5fa;
+}
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    color:#cbd5e1;
+    font-size:1.1rem;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:2.5rem;
+    text-align:center;
+}
+
+.contact-box p{
+    margin:1rem 0;
+    font-size:1.1rem;
+}
+
+.highlight{
+    color:#60a5fa;
+    font-weight:600;
+}
+
+footer{
+    text-align:center;
+    padding:2rem;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.6rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <span class="badge">Professional Tech Support</span>
+
+        <h1>LCB PC</h1>
+
+        <p>
+            Fast, reliable computer repair and IT support for homes and
+            small businesses. From virus removal and upgrades to
+            troubleshooting and remote support, we're here to help.
+        </p>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+
+        <div class="service-card">
+            <h3>💻 Computer Repair</h3>
+            <p>Diagnosing and fixing hardware and software issues.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🛡️ Virus Removal</h3>
+            <p>Removing malware and improving device security.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>⚡ Performance Upgrades</h3>
+            <p>SSD, RAM, and performance upgrades for faster PCs.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🌐 Network Support</h3>
+            <p>Wi-Fi setup, troubleshooting, and optimization.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🖥️ Remote Support</h3>
+            <p>Professional assistance without leaving your home.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🔧 Custom PC Builds</h3>
+            <p>Custom-built systems for gaming, school, and work.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>📱 Device Setup</h3>
+            <p>Help setting up new computers, phones, printers, and other devices.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>☁️ Data Backup & Recovery</h3>
+            <p>Protect important files and recover lost data when possible.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="about">
+        <h2 class="section-title">About LCB PC</h2>
+
+        <p>
+            At LCB PC, our goal is to make technology simple.
+            Whether your computer is running slow, won't turn on,
+            has a virus, or needs an upgrade, we provide fast,
+            affordable, and reliable support you can trust.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Contact LCB PC</h2>
+
+    <div class="contact-box">
+
+        <p>✉️ <span class="highlight">Email:</span> lcbpc11@gmail.com</p>
+
+
+        <p>
+            Email us to receive professional assistance.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 LCB PC • Professional Tech Support & Computer Repair
+</footer>
+
+</body>
+</html>
