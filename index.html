@@ -491,6 +491,31 @@ footer img{height:20px;width:auto;border-radius:4px;opacity:.85;}
 @media (prefers-reduced-motion:reduce){
     .status-dot,.console-cursor{animation:none;}
 }
+
+.copy-toast{
+    position:fixed;
+    left:50%;
+    bottom:2rem;
+    transform:translate(-50%,20px);
+    background:var(--navy-800);
+    border:1px solid var(--blue-500);
+    color:var(--ink-100);
+    padding:.8rem 1.3rem;
+    border-radius:10px;
+    font-size:.9rem;
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s,transform .25s;
+    z-index:100;
+}
+.copy-toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+.copy-toast svg{color:var(--led-green);flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -648,7 +673,7 @@ footer img{height:20px;width:auto;border-radius:4px;opacity:.85;}
                 </li>
                 <li>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    Simple explanations, no tech jargon
+                    Plain-English explanations, no tech jargon
                 </li>
                 <li>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -700,6 +725,51 @@ footer img{height:20px;width:auto;border-radius:4px;opacity:.85;}
     <img src="LCBPCLOGO.png" alt="LCB PC">
     <span>© 2026 LCB PC — Professional Tech Support & Computer Repair</span>
 </footer>
+
+<div class="copy-toast" id="copyToast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Email copied — lcbpc11@gmail.com</span>
+</div>
+
+<script>
+(function(){
+    var EMAIL = "lcbpc11@gmail.com";
+    var toast = document.getElementById('copyToast');
+    var toastTimer;
+
+    function showToast(){
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function(){
+            toast.classList.remove('show');
+        },2600);
+    }
+
+    function copyEmail(){
+        if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(EMAIL).then(showToast).catch(showToast);
+        } else {
+            var el = document.createElement('textarea');
+            el.value = EMAIL;
+            el.style.position='fixed';
+            el.style.opacity='0';
+            document.body.appendChild(el);
+            el.select();
+            try{ document.execCommand('copy'); }catch(e){}
+            document.body.removeChild(el);
+            showToast();
+        }
+    }
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link){
+        link.addEventListener('click', function(){
+            // Let the mailto: attempt fire normally; also copy as a fallback
+            // in case no mail client is configured on this device.
+            copyEmail();
+        });
+    });
+})();
+</script>
 
 </body>
 </html>
